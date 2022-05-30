@@ -22,23 +22,23 @@
 
           <% if user_signed_in? %>
             <li class="nav-item">
-              <%= link_to root_path do %>
+              <%= link_to user_path(current_user.id) do %>
                 <i class="fas fa-home"></i> Home
               <%end%>
             </li>
             <li class="nav-item">
-              <%= link_to root_path do %>
-                <i class="fas fa-link"></i> About
+              <%= link_to users_path do %>
+                <i class="fas fa-user-friends"></i> Users
               <%end%>
             </li>
             <li class="nav-item">
-              <%= link_to root_path do %>
-                <i class="fas fa-user-plus"></i> Sign Up
+              <%= link_to books_path do %>
+                <i class="fas fa-book"></i> Books
               <%end%>
             </li>
             <li class="nav-item">
-              <%= link_to root_path do %>
-                <i class="fas fa-sign-in-alt"></i> Log in
+              <%= link_to destroy_user_sessio_path do %>
+                <i class="fas fa-sign-out-alt"></i> Log out
               <%end%>
             </li>
 
@@ -49,20 +49,21 @@
               <%end%>
             </li>
             <li class="nav-item">
-              <%= link_to root_path do %>
-                <i class="fas fa-user-friends"></i> Users
+              <%= link_to about_path do %>
+                <i class="fas fa-link"></i> About
               <%end%>
             </li>
             <li class="nav-item">
-              <%= link_to root_path do %>
-                <i class="fas fa-book"></i> Books
+              <%= link_to new_user_registration_path do %>
+                <i class="fas fa-user-plus"></i> Sign Up
               <%end%>
             </li>
             <li class="nav-item">
-              <%= link_to root_path do %>
-                <i class="fas fa-sign-out-alt"></i> Log out
+              <%= link_to new_user_session_path do %>
+                <i class="fas fa-sign-in-alt"></i> Log in
               <%end%>
             </li>
+
           <% end %>
 
         </ul>
