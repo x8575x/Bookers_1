@@ -2,15 +2,83 @@
 <html>
   <head>
     <title>Bookers</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <i class="fas fa-book-open"></i><a class="navbar-brand p-2" href="/" >Bookers</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse text-right" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-home"></i> Home
+              <%end%>
+            </li>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-link"></i> About
+              <%end%>
+            </li>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-user-plus"></i> Sign Up
+              <%end%>
+            </li>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-sign-in-alt"></i> Log in
+              <%end%>
+            </li>
+
+          <% else %>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-home"></i> Home
+              <%end%>
+            </li>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-user-friends"></i> Users
+              <%end%>
+            </li>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-book"></i> Books
+              <%end%>
+            </li>
+            <li class="nav-item">
+              <%= link_to root_path do %>
+                <i class="fas fa-sign-out-alt"></i> Log out
+              <%end%>
+            </li>
+          <% end %>
+
+        </ul>
+      </div>
+
+
+    </nav>
+  </header>
+
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <div class="text-center bg-secondary p-4 mt-5">
+      CopyRight Infratop.inc
+    </div>
+  </footer>
 </html>
