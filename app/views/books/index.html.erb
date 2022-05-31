@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-4">
       <div class="row">
         <%= render 'users/info' %>
       </div>
@@ -10,31 +10,7 @@
       </div>
     </div>
 
-    <div class="col-lg-7">
-
-      <div class="row  border-bottom border-secondary">
-        <h2>Book datail</h2>
-      </div>
-
-      <% @books.each do |book| %>
-        <table>
-          <thad>
-            <tr>
-              <th></th>
-              <th>Title</th>
-              <th>Opinion</th>
-            </tr>
-          </thad>
-          <tbody>
-            <tr>
-              <td><%= image_tag book.user.get_profile_image %></td>
-              <td><%= book.title %></td>
-              <td><%= book.body %></td>
-            </tr>
-          </tbody>
-        </table>
-      <% end %>
-    </div>
+    <%= render 'index', books: @books %>
   </div>
 
 </div>
